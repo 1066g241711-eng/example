@@ -1,0 +1,67 @@
+/* 全体のリセットと背景 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fcf8f2; /* 優しいクリーム色 */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4a4a4a;
+}
+
+/* ボタンの配置エリア */
+div:first-of-type {
+    margin-bottom: 25px;
+}
+
+/* 「画像を表示」ボタンのおしゃれ化 */
+button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* 鮮やかなフルーツカラー */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(255, 126, 95, 0.3);
+}
+
+/* 画像一覧のグリッド配置（画面幅に合わせて自動調整） */
+#imageList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* スマホで見やすい横幅に制限 */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 画像（フルーツ）のスタイル */
+#imageList img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    object-fit: contain; /* 画像が歪まないように収める */
+    background-color: #fafafa;
+    border-radius: 12px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #f0e6df;
+    transition: transform 0.3s ease;
+}
+
+/* マウスが乗ったときのアニメーション */
+#imageList img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
